@@ -14,15 +14,16 @@
 # You should have received a copy of the GNU General Public License along
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 
-# Set projectname (must be done AFTER setting configurationtypes)
-project(DraenorCore)
 
 # CMake policies (can not be handled elsewhere)
  cmake_minimum_required(VERSION 3.20.4)
- cmake_policy(SET CMP0005 OLD)
+ cmake_policy(SET CMP0005 NEW)
  if(POLICY CMP0043)
-   cmake_policy(SET CMP0043 OLD) # Disable 'Ignore COMPILE_DEFINITIONS_<Config> properties'
+   cmake_policy(SET CMP0043 NEW) # Disable 'Ignore COMPILE_DEFINITIONS_<Config> properties'
  endif(POLICY CMP0043)
+ 
+ # Set projectname (must be done AFTER setting configurationtypes)
+project(DraenorCore)
 
 # Set RPATH-handing (CMake parameters)
 set(CMAKE_SKIP_BUILD_RPATH 0)
